@@ -1,2 +1,2 @@
 # obsidian
-Scaffold/jumpstart for Obsidian vault
+Scaffold/jumpstart for Obsidian vaults
