@@ -3,10 +3,15 @@ title: _templater_functions_
 ---
 ## Internal Functions
 ### Config Module
-tp.confg.active_file: **<% tp.config.active_file %>**
-tp.config.run_mode: **<% tp.config.run_mode %>**
-tp.config.target_file: **<% tp.config.target_file %>**
-tp.confit.template_file: **<% tp.config.template_file %>**
+```ad-example
+title: tp.config.*
+collapse: close
+<span style="color:cyan">Examples:</span>
+1. **tp.config.active_file:** <% tp.config.active_file %>
+1. **tp.config.run_mode:** <% tp.config.run_mode %>
+1. **tp.config.target_file:** <% tp.config.target_file %>
+1. **tp.config.template_file:** <% tp.config.template_file %>
+```
 ### Date Module
 ```ad-example
 title: tp.date.now()
@@ -60,7 +65,6 @@ collapse: close
 1. **moment().format("[Today is] dddd"):** <% moment().format("[Today is] dddd") %>
 1. **moment("01-2022", "MM-YYYY").daysInMonth():** <% moment("01-2022", "MM-YYYY").daysInMonth() %>
 ```
-
 ### File Module
 ```ad-example
 title: tp.file.*
@@ -69,6 +73,15 @@ collapse:close
 1. **tp.file.title:** <% tp.file.title %>
 1. **tp.file.creation_date("MMMM Do, YYYY"):** <% tp.file.creation_date("MMMM Do, YYYY") %>
 ```
-File title: **<% tp.file.title %>**
 ## Dynamic Commands
-**Last modified date:** <%+ tp.file.last_modified_date() %>
+```ad-note
+title: Definition
+collapse: open
+Dynamic commands are resolved upon entering preview mode. To declare a dynamic command add a **+** after the opening tag: `<%+`
+```
+```ad-example
+title: <%**+** *command* %>
+collapse: close
+<span style="color:cyan">Examples:</span>
+1. **+ tp.file.last_modified_date():** <%+ tp.file.last_modified_date() %>
+```
